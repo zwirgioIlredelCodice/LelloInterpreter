@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "comandi.h"
+#include "lelloVM/comandi.h"
+#include "lelloVM/vm.h"
 
 
 void esegui() {

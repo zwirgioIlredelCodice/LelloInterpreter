@@ -1,22 +1,6 @@
-#pragma once
 #include<stdio.h>
+#include"comandi.h"
 #include"vm.h"
-
-enum comandi {
-	alloca, //alloca indirizzo in indirizzo
-	carica, //alloca costante in indirizzo
-	 
-	somma,  //somma mem[indirizzo] mem[indirizzo] in mem[0]
-
-	vai, //va a n comando
-	vai_vero, //vai a n coamdo se mem[0] = 1 *vero*
-	vai_falso, //vai a n coamdo se mem[0] = 0 *falso*
-
-	scrivi, //scrive mem[indirizzo] 
-	immetti, //imput in indirizzo
-
-	fine, //fine programma
-};
 
 
 /*
