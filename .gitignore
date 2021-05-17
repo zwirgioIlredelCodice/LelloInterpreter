@@ -1,0 +1,3 @@
+#ignora .o e .exe in qualsiasi cartella
+**/o
+**/exe

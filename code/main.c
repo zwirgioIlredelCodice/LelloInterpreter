@@ -52,6 +52,7 @@ void esegui() {
 }
 
 int main() {
+	int pro[] = {1,666,2,1,222,3,2,2,3,6,0,0,8};
 	
 	esegui();
 	
