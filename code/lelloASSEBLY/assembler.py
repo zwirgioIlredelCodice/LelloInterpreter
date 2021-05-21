@@ -1,8 +1,9 @@
 import sys
 
-nome_file = sys.argv[1]
+file_in = sys.argv[1]
+file_out = sys.argv[2]
 
-file = open(nome_file,"r")
+file = open(file_in,"r")
 contenuto = file.read()
 file.close()
 
