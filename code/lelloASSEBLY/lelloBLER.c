@@ -3,23 +3,28 @@
 
 int main()
 {
-    char c[100];
-    FILE *fptr;
-    if ((fptr = fopen("allo.txt", "r")) == NULL)
+    // open the file
+    FILE *fp = fopen("allo.txt", "r");
+
+    // Return if could not open file
+    if (fp == NULL) 
     {
-        printf("Error! File cannot be opened.");
-        // Program exits if the file pointer returns NULL.
-        exit(1);
+        printf("il file non esiste\n");
+        return 0;
     }
 
-    // reads text until newline is encountered
-    for (int x=0; x<4; x++)
+    do
     {
-        fscanf(fptr, "%[^ \n]", c);
-        printf("Data from the file:\n%s", c);
-    }
-    
-    fclose(fptr);
+        // Taking input single character at a time
+        char c = fgetc(fp);
 
+        // Checking for end of file
+        if (feof(fp))
+            break;
+
+        printf("%c", c);
+    } while (1);
+
+    fclose(fp);
     return 0;
 }
