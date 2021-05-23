@@ -1,7 +1,6 @@
 import sys
 
 file_in = sys.argv[1]
-file_out = sys.argv[2]
 
 file = open(file_in,"r")
 contenuto = file.read()

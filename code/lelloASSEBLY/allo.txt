@@ -2,4 +2,5 @@ carica 666 1
 carica 111 2
 somma 1 2
 scrivi 0
+vai 0
 fine
