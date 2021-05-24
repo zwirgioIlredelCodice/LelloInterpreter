@@ -51,7 +51,13 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
     char *token;
     const char delim[2] = " ";
 
-    fp = fopen("allo.txt", "r");
+    fp = fopen(nome_file, "r");
+
+    if (fp == NULL)
+    {
+        printf("Could not open file %s", nome_file);
+    }
+
     while (!feof(fp))
     {
         fgets(buff, 100, (FILE *)fp); //leggie una riga del file in buff
@@ -127,7 +133,9 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
             n_arg_1 = 0;
             n_arg_2 = 0;
         }
-
+        else {
+            printf("comando non trovato");
+        }
         //lo mette nel array
         comandi_array[p_comandi_array] = n_comando;
         p_comandi_array++;

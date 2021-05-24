@@ -9,7 +9,7 @@ int main() {
 	
     char prova[] = "example/allo.txt";
 
-	int numero_comandi = line_number(prova);
+	int numero_comandi = line_number(prova)+1;
 
     int* comandi_array;
     comandi_array = calloc(numero_comandi*3,sizeof(int)); //crea un array di int per tnenere tutti i comandi
@@ -21,7 +21,6 @@ int main() {
     
     parse_lelloBLER(prova,comandi_array);
 
-	//debug programma
     for (int i=0;i<numero_comandi*3;i++)
     {
         printf("%d ",comandi_array[i]);
