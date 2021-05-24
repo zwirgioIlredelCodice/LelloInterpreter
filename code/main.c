@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lelloVM/vm.h"
 #include "lelloASSEBLY/lelloBLER.h"
 
@@ -6,7 +7,9 @@
 
 int main() {
 	
-	int numero_comandi = line_number("allo.txt");
+    char prova[] = "example/allo.txt";
+
+	int numero_comandi = line_number(prova);
 
     int* comandi_array;
     comandi_array = calloc(numero_comandi*3,sizeof(int)); //crea un array di int per tnenere tutti i comandi
@@ -16,10 +19,10 @@ int main() {
         return 1;
     }
     
-    parse_lelloBLER("allo.txt",comandi_array);
+    parse_lelloBLER(prova,comandi_array);
 
 	//debug programma
-    for (int i=0;i<numero_comandi*3;i++) 
+    for (int i=0;i<numero_comandi*3;i++)
     {
         printf("%d ",comandi_array[i]);
     }

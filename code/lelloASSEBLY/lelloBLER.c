@@ -35,15 +35,6 @@ int line_number(char nome_file[])
 
 void parse_lelloBLER(char nome_file[], int comandi_array[])
 {
-    char s_alloca[] = "alloca";
-    char s_carica[] = "carica";
-    char s_somma[] = "somma";
-    char s_vai[] = "vai";
-    char s_vai_vero[] = "vai_vero";
-    char s_via_falso[] = "vai_falso";
-    char s_scrivi[] = "scrivi";
-    char s_immetti[] = "immetti";
-    char s_fine[] = "fine";
     int p_comandi_array = 0;
 
     FILE *fp;
@@ -82,11 +73,59 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
             i++;
             token = strtok(NULL, delim);
         }
-        if (strcmp(s_carica, comando) == 0) //se il comando è s_carica
+        if (strcmp("carica", comando) == 0) //se il comando è s_carica
         {
             n_comando = carica;
             n_arg_1 = atoi(arg_1);
             n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("alloca", comando) == 0) 
+        {
+            n_comando = alloca;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("somma", comando) == 0) 
+        {
+            n_comando = somma;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("vai", comando) == 0) 
+        {
+            n_comando = vai;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = 0;
+        }
+        else if (strcmp("vai_vero", comando) == 0) 
+        {
+            n_comando = vai_vero;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = 0;
+        }
+        else if (strcmp("via_falso", comando) == 0) 
+        {
+            n_comando = vai_falso;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = 0;
+        }
+        else if (strcmp("scrivi", comando) == 0) 
+        {
+            n_comando = vai_vero;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = 0;
+        }
+        else if (strcmp("immetti", comando) == 0) 
+        {
+            n_comando = immetti;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = 0;
+        }
+        else if (strcmp("fine", comando) == 0) 
+        {
+            n_comando = fine;
+            n_arg_1 = 0;
+            n_arg_2 = 0;
         }
 
         //lo mette nel array
