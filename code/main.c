@@ -21,10 +21,12 @@ int main() {
     
     parse_lelloBLER(prova,comandi_array);
 
+    //debug programma
     for (int i=0;i<numero_comandi*3;i++)
     {
         printf("%d ",comandi_array[i]);
     }
+    printf("\noutput programma:\n");
 	
 	esegui(comandi_array);
 	
@@ -33,4 +35,5 @@ int main() {
 	for(int i=0;i<50;i++) {
 		printf("%d ",mem[i]);
 	}
+    printf("\n");
 }

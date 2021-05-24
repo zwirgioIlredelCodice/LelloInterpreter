@@ -66,7 +66,7 @@ void SCRIVI(int indirizzo1) {
 	comando_successivo();
 }
 
-void IMMETTi(int indirizzo1) {
+void IMMETTI(int indirizzo1) {
 	scanf("%d",&indirizzo1);
 	comando_successivo();
 }

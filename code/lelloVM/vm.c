@@ -41,7 +41,7 @@ void esegui(int programma[]) {
 			break;
 		
 		case immetti:
-			IMMETTi(arg1);
+			IMMETTI(arg1);
 		
 		case fine:
 			break;

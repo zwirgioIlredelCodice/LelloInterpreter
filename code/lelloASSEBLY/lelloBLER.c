@@ -117,7 +117,7 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
         }
         else if (strcmp("scrivi", comando) == 0) 
         {
-            n_comando = vai_vero;
+            n_comando = scrivi;
             n_arg_1 = atoi(arg_1);
             n_arg_2 = 0;
         }
