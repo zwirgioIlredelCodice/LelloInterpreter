@@ -87,7 +87,7 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
         }
         else if (strcmp("alloca", comando) == 0) 
         {
-            n_comando = alloca;
+            n_comando = allocax;
             n_arg_1 = atoi(arg_1);
             n_arg_2 = atoi(arg_2);
         }

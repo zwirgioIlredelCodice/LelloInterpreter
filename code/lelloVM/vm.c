@@ -13,7 +13,7 @@ void esegui(int programma[]) {
 
  		switch (programma[p_contatore])
 		{
-		case alloca:
+		case allocax:
 			ALLOCA(arg1, arg2);
 			break;
 		
