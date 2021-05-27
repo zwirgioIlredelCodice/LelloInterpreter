@@ -17,4 +17,4 @@ clean:
 	del build\*.o build\lellointerpreter.exe
 
 test:
-	./build/lellointerpreter.exe
+	./build/lellointerpreter.exe example/conta.txt

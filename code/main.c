@@ -5,11 +5,20 @@
 
 
 
-int main() {
-	
-    char prova[] = "example/conta.txt";
+int main(int argc, char *argv[]) { //per command line argument
+    if( argc == 2 ) {
+        printf("eseguzione file %s\n", argv[1]);
+    }
+    else if( argc > 2 ) {
+        printf("troppi argomenti.\n");
+        return -1;
+    }
+    else {
+        printf("immetti il nome del file da eseguire.\n");
+        return -1;
+    }
 
-	int numero_righe = line_number(prova)+1;
+	int numero_righe = line_number(argv[1])+1;
     int numero_comandi = numero_righe*3;
 
     int* comandi_array;
@@ -20,7 +29,7 @@ int main() {
         return 1;
     }
     
-    parse_lelloBLER(prova,comandi_array);
+    parse_lelloBLER(argv[1],comandi_array);
 
     //debug programma
     for (int i=0;i<numero_comandi;i++)
