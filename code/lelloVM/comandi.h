@@ -12,7 +12,7 @@ enum comandi
 
 	e, // mem[0] mem[indirizzo] && mem[indirizzo]
 	o, // mem[0] mem[indirizzo] || mem[indirizzo]
-	non, // mem[0] mem[indirizzo] ! mem[indirizzo]
+	non, // mem[0] = !mem[indirizzo]
 	uguale,
 	nonuguale,
 	minore,
@@ -20,14 +20,14 @@ enum comandi
 	minoreuguale,
 	maggioreuguale,
 
-	vai,	   //va a n comando 3
-	vai_vero,  //vai a n coamdo se mem[0] = 1 *vero* 4
-	vai_falso, //vai a n coamdo se mem[0] = 0 *falso* 5
+	vai,	   //va a n comando 
+	vai_vero,  //vai a n coamdo se mem[0] = 1 *vero* 
+	vai_falso, //vai a n coamdo se mem[0] = 0 *falso* 
  
-	scrivi,	 //scrive mem[indirizzo] 6
-	immetti, //imput in indirizzo 7
+	scrivi,	 //scrive mem[indirizzo] 
+	immetti, //imput in indirizzo 
 
-	fine, //fine programma 8
+	fine, //fine programma 
 };
 
 void comando_successivo();

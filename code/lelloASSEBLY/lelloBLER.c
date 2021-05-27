@@ -97,6 +97,59 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
             n_arg_1 = atoi(arg_1);
             n_arg_2 = atoi(arg_2);
         }
+        else if (strcmp("e", comando) == 0)
+        {
+            n_comando = e;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("o", comando) == 0)
+        {
+            n_comando = o;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("non", comando) == 0)
+        {
+            n_comando = non;
+            n_arg_1 = atoi(arg_1);
+        }
+        else if (strcmp("uguale", comando) == 0)
+        {
+            n_comando = uguale;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("nonuguale", comando) == 0)
+        {
+            n_comando = nonuguale;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("minore", comando) == 0)
+        {
+            n_comando = minore;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("maggiore", comando) == 0)
+        {
+            n_comando = maggiore;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("minoreuguale", comando) == 0)
+        {
+            n_comando = minoreuguale;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
+        else if (strcmp("maggioreuguale", comando) == 0)
+        {
+            n_comando = maggioreuguale;
+            n_arg_1 = atoi(arg_1);
+            n_arg_2 = atoi(arg_2);
+        }
         else if (strcmp("vai", comando) == 0) 
         {
             n_comando = vai;

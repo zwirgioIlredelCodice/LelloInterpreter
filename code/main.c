@@ -23,13 +23,13 @@ int main() {
     parse_lelloBLER(prova,comandi_array);
 
     //debug programma
-    for (int i=0;i<numero_comandi*3;i++)
+    for (int i=0;i<numero_comandi;i++)
     {
         printf("%d ",comandi_array[i]);
     }
     printf("\noutput programma:\n");
 	
-	//esegui(comandi_array);
+	esegui(comandi_array);
 	
 	//debug memoria
 	printf("\nmemoria\n");
