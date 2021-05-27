@@ -1,0 +1,5 @@
+carica 1 0
+carica 69 2
+vai_vero 4
+scrivi 2
+fine

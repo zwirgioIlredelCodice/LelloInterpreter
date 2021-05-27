@@ -187,7 +187,7 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
             n_arg_2 = 0;
         }
         else {
-            printf("comando non trovato");
+            printf("comando non trovato a comando %d\n",p_comandi_array);
         }
         //lo mette nel array
         comandi_array[p_comandi_array] = n_comando;

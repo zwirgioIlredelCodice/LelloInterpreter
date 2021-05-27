@@ -7,7 +7,7 @@
 
 int main() {
 	
-    char prova[] = "example/allo.txt";
+    char prova[] = "example/conta.txt";
 
 	int numero_righe = line_number(prova)+1;
     int numero_comandi = numero_righe*3;

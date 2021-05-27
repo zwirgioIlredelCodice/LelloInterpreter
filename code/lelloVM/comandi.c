@@ -98,12 +98,12 @@ void MAGGIOREUGUALE(int indirizzo1, int indirizzo2) {
 ---------FLUSSO PROGRAMMA
 */
 void VAI(int posizione) {
-	p_contatore = posizione * 3; //perchè ogni 3
+	p_contatore = posizione * 3 - 3; //perchè ogni 3
 }
 
 void VAI_VERO(int posizione) {
 	if (mem[0] == 1) {
-		p_contatore = posizione * 3; //perchè ogni 3
+		p_contatore = posizione * 3 - 3; //perchè ogni 3
 	}
 	else {
 		comando_successivo();
@@ -112,7 +112,7 @@ void VAI_VERO(int posizione) {
 
 void VAI_FALSO(int posizione) {
 	if (mem[0] == 0) {
-		p_contatore = posizione * 3; //perchè ogni 3
+		p_contatore = posizione * 3 - 3; //perchè ogni 3
 	}
 	else {
 		comando_successivo();
