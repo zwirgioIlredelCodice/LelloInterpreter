@@ -24,10 +24,47 @@ void esegui(int programma[]) {
 		case somma:
 			SOMMA(arg1, arg2);
 			break;
+		
+		case sottrai:
+			SOTTRAI(arg1, arg2);
+			break;
+
+		case moltiplica:
+			MOLTIPLICA(arg1, arg2);
+			break;
+		
+		case dividi:
+			DIVIDI(arg1, arg2);
+			break;
+		
+		case uguale:
+			UGUALE(arg1, arg2);
+			break;
+
+		case nonuguale:
+			NONUGUALE(arg1, arg2);
+			break;
+
+		case minore:
+			MINORE(arg1, arg2);
+			break;
+
+		case maggiore:
+			MAGGIORE(arg1, arg2);
+			break;
+		
+		case minoreuguale:
+			MINOREUGUALE(arg1, arg2);
+			break;
+
+		case maggioreuguale:
+			MAGGIOREUGUALE(arg1, arg2);
+			break;
 
 		case vai:
 			VAI(arg1);
 			break;
+		
 		case vai_vero:
 			VAI_VERO(arg1);
 			break;

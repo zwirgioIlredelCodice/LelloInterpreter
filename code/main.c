@@ -9,10 +9,11 @@ int main() {
 	
     char prova[] = "example/allo.txt";
 
-	int numero_comandi = line_number(prova)+1;
+	int numero_righe = line_number(prova)+1;
+    int numero_comandi = numero_righe*3;
 
     int* comandi_array;
-    comandi_array = calloc(numero_comandi*3,sizeof(int)); //crea un array di int per tnenere tutti i comandi
+    comandi_array = calloc(numero_comandi,sizeof(int)); //crea un array di int per tnenere tutti i comandi
     if (comandi_array == NULL)
     { 
         printf("non riesco a creare array comandi_array\n");
@@ -28,7 +29,7 @@ int main() {
     }
     printf("\noutput programma:\n");
 	
-	esegui(comandi_array);
+	//esegui(comandi_array);
 	
 	//debug memoria
 	printf("\nmemoria\n");

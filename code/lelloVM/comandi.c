@@ -31,6 +31,68 @@ void SOMMA(int indirizzo1, int indirizzo2) {
 	comando_successivo();
 }
 
+void SOTTRAI(int indirizzo1, int indirizzo2) {
+	mem[0] = mem[indirizzo1] - mem[indirizzo2];
+	comando_successivo();
+}
+
+void MOLTIPLICA(int indirizzo1, int indirizzo2) {
+	mem[0] = mem[indirizzo1] * mem[indirizzo2];
+	comando_successivo();
+}
+
+void DIVIDI(int indirizzo1, int indirizzo2) {
+	mem[0] = mem[indirizzo1] / mem[indirizzo2];
+	comando_successivo();
+}
+
+/*
+---------OPERATORI LOGICI
+*/
+void E(int indirizzo1, int indirizzo2) {
+	mem[0] = mem[indirizzo1] && mem[indirizzo2];
+	comando_successivo();
+}
+
+void O(int indirizzo1, int indirizzo2) {
+	mem[0] = mem[indirizzo1] || mem[indirizzo2];
+	comando_successivo();
+}
+
+void NON(int indirizzo1) {
+	mem[0] = !(mem[indirizzo1]);
+	comando_successivo();
+}
+
+void UGUALE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] == mem[indirizzo2]);
+	comando_successivo();
+}
+
+void NONUGUALE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] != mem[indirizzo2]);
+	comando_successivo();
+}
+
+void MINORE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] < mem[indirizzo2]);
+	comando_successivo();
+}
+
+void MAGGIORE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] > mem[indirizzo2]);
+	comando_successivo();
+}
+
+void MINOREUGUALE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] <= mem[indirizzo2]);
+	comando_successivo();
+}
+
+void MAGGIOREUGUALE(int indirizzo1, int indirizzo2) {
+	mem[0] = (mem[indirizzo1] >= mem[indirizzo2]);
+	comando_successivo();
+}
 
 /*
 ---------FLUSSO PROGRAMMA
@@ -56,7 +118,6 @@ void VAI_FALSO(int posizione) {
 		comando_successivo();
 	}
 }
-
 
 /*
 ---------IO
