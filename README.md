@@ -10,7 +10,7 @@ un linguaggio di programmazione interpertato difficile da usare
 * ben 50 interi per ram
 
 ## Se proprio lo vuoi provare
-serve gcc, makefile e pasienza
+serve gcc, makefile e pazienza
 1. crea la cartella build nella directory del progetto
 1. esegui `make`
 1. esegui `make test` per eseguire un esepio consigliato
