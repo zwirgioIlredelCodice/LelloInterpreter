@@ -1,12 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include"vm.h"
 #include "comandi.h"
 
 int p_contatore = 0; //il contatore del programma
-int mem[50]; //la memoria disponibile
+int grandezza_memoria;
+int* mem;
 
-void esegui(int programma[]) {
+void inizzializza_memoria(int grandezza) {
+	grandezza_memoria = grandezza;
+	mem = calloc(grandezza_memoria,sizeof(int));
+}
+
+void esegui(int programma[], int numero_comandi) {
+	numero_comandi -=3; // perchè p_contatore parte da zero e numero_comandi da 3
 	while (programma[p_contatore] != fine) {
+		
+		if (p_contatore > numero_comandi -3) {
+			printf("accesso a programma[x] inesistente [ERRORE]\n");
+			return;
+		}
 
 		int arg1 = programma[p_contatore+1];
 		int arg2 = programma[p_contatore+2];

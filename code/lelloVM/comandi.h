@@ -3,7 +3,7 @@
 enum comandi
 {
 	allocax, //alloca indirizzo in indirizzo x perchè senò rompe 0
-	carica, //alloca costante in indirizzo 1
+	carica, //carica costante in indirizzo 1
 
 	somma, //somma mem[indirizzo] mem[indirizzo] in mem[0] 2
 	sottrai,

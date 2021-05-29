@@ -1,0 +1,3 @@
+alloca 2 34
+vai 3
+fine
