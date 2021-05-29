@@ -55,12 +55,11 @@ int main(int argc, char *argv[])
     esegui(comandi_array, numero_comandi);
 
     //debug memoria
-    /* PROBLEMA STRANO CON LA LETTURA DI MEM
     printf("\nmemoria\n");
     for (int i = 0; i < grandezza_memoria; i++)
     {
         printf("%d ", (mem[i]));
     }
-    */
+    
     printf("\n");
 }
