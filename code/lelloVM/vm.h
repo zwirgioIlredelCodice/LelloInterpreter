@@ -1,6 +1,6 @@
 #pragma once
 
-void esegui(int programma[], int numero_comandi);
+void esegui(int programma[]);
 
 void inizzializza_memoria(int grandezza);
 

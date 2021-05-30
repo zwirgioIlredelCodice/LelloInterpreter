@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     ---------ESEGUZIONE
     */
     inizzializza_memoria(50);
-    esegui(comandi_array, numero_comandi);
+    esegui(comandi_array);
 
     //debug memoria
     printf("\nmemoria\n");

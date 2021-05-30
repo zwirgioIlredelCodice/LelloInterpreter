@@ -12,14 +12,9 @@ void inizzializza_memoria(int grandezza) {
 	mem = calloc(grandezza_memoria,sizeof(int));
 }
 
-void esegui(int programma[], int numero_comandi) {
-	numero_comandi -=3; // perchè p_contatore parte da zero e numero_comandi da 3
+void esegui(int programma[]) {
+	
 	while (programma[p_contatore] != fine) {
-		
-		if (p_contatore > numero_comandi -3) {
-			printf("accesso a programma[x] inesistente [ERRORE]\n");
-			return;
-		}
 
 		int arg1 = programma[p_contatore+1];
 		int arg2 = programma[p_contatore+2];
