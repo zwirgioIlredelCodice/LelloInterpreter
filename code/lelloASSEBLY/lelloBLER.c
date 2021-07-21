@@ -79,112 +79,80 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
             i++;
             token = strtok(NULL, delim);
         }
+        n_arg_1 = atoi(arg_1);
+        n_arg_2 = atoi(arg_2);
+
         if (strcmp("carica", comando) == 0) //se il comando è s_carica
         {
             n_comando = carica;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("alloca", comando) == 0) 
         {
             n_comando = allocax;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("somma", comando) == 0) 
         {
             n_comando = somma;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("e", comando) == 0)
         {
             n_comando = e;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("o", comando) == 0)
         {
             n_comando = o;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("non", comando) == 0)
         {
             n_comando = non;
-            n_arg_1 = atoi(arg_1);
         }
         else if (strcmp("uguale", comando) == 0)
         {
             n_comando = uguale;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("nonuguale", comando) == 0)
         {
             n_comando = nonuguale;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("minore", comando) == 0)
         {
             n_comando = minore;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("maggiore", comando) == 0)
         {
             n_comando = maggiore;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("minoreuguale", comando) == 0)
         {
             n_comando = minoreuguale;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("maggioreuguale", comando) == 0)
         {
             n_comando = maggioreuguale;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = atoi(arg_2);
         }
         else if (strcmp("vai", comando) == 0) 
         {
             n_comando = vai;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = 0;
         }
         else if (strcmp("vai_vero", comando) == 0) 
         {
             n_comando = vai_vero;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = 0;
         }
         else if (strcmp("via_falso", comando) == 0) 
         {
             n_comando = vai_falso;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = 0;
         }
         else if (strcmp("scrivi", comando) == 0) 
         {
             n_comando = scrivi;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = 0;
         }
         else if (strcmp("immetti", comando) == 0) 
         {
             n_comando = immetti;
-            n_arg_1 = atoi(arg_1);
-            n_arg_2 = 0;
         }
         else if (strcmp("fine", comando) == 0) 
         {
             n_comando = fine;
-            n_arg_1 = 0;
-            n_arg_2 = 0;
         }
         else {
             printf("comando non trovato a comando %d\n",p_comandi_array);

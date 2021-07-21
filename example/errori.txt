@@ -1,0 +1,9 @@
+carica 0 1
+carica 10 2
+carica 1 3
+somma 1 3
+alloca 0 1
+scrivi 1
+minore 1 2
+vai_vero 4
+fine

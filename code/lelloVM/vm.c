@@ -1,11 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include"vm.h"
 #include "comandi.h"
 
 int p_contatore = 0; //il contatore del programma
-int mem[50]; //la memoria disponibile
+int grandezza_memoria;
+int* mem;
+
+void inizzializza_memoria(int grandezza) {
+	grandezza_memoria = grandezza;
+	mem = calloc(grandezza_memoria,sizeof(int));
+}
 
 void esegui(int programma[]) {
+	
 	while (programma[p_contatore] != fine) {
 
 		int arg1 = programma[p_contatore+1];
