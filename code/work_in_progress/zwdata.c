@@ -37,26 +37,26 @@ void print_zwdata(zwdata *n)
 
     else
     {
-    int i;
-    if (n->signbit == ISSTRING)
-    {   
-        for (i = n->length; i >= 0; i--)
+        int i;
+        if (n->signbit == ISSTRING)
         {
-            printf("%c", n->digits[i]);
+            for (i = n->length; i >= 0; i--)
+            {
+                printf("%c", n->digits[i]);
+            }
         }
-    }
-    else
-    {
-        if (n->signbit == MINUS)
+        else
         {
-            printf("- ");
-        }
+            if (n->signbit == MINUS)
+            {
+                printf("- ");
+            }
 
-        for (i = n->length; i >= 0; i--)
-        {
-            printf("%c", '0' + n->digits[i]);
+            for (i = n->length; i >= 0; i--)
+            {
+                printf("%c", '0' + n->digits[i]);
+            }
         }
-    }
     }
 }
 
@@ -363,14 +363,15 @@ int main(void)
     {
         printf("enter command ");
         scanf(" %c", &command);
-        if (command == 'Q')
+
+        if (command == 'Q') //exit from while loop
         {
             break;
         }
 
         switch (command)
         {
-        case 'i':
+        case 'i': //input int
             printf("enter arg1\n");
             scanf("%d", &arg1);
             printf("enter arg2\n");
@@ -378,7 +379,7 @@ int main(void)
             int_to_zwdata(arg1, &arr_zwdata[arg2]);
             break;
 
-        case 'I':
+        case 'I': //input srting
             printf("enter string\n");
             scanf(" %s", string);
             printf("enter arg2\n");
@@ -386,7 +387,7 @@ int main(void)
             string_to_zwdata(string, &arr_zwdata[arg2]);
             break;
 
-        case 'a':
+        case 'a': //add
             printf("enter arg1\n");
             scanf("%d", &arg1);
             printf("enter arg2\n");
@@ -396,7 +397,7 @@ int main(void)
             add_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
             break;
 
-        case 's':
+        case 's': //subtract
             printf("enter arg1\n");
             scanf("%d", &arg1);
             printf("enter arg2\n");
@@ -426,20 +427,22 @@ int main(void)
             divide_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
             break;
 
-        case 'p':
+        case 'p': //print
             printf("enter arg1\n");
             scanf("%d", &arg1);
             print_zwdata(&arr_zwdata[arg1]);
 
         default:
+            printf("command not found\n");
             break;
         }
 
+        /*debug*/
         for (int i = 0; i < 10; i++)
         {
             printf("arr_zwdata[%d] = ", i);
             print_zwdata(&arr_zwdata[i]);
-            printf(" len is = %d", arr_zwdata[i].length);
+            printf("\tsingbit = %d \tlen is = %d", arr_zwdata[i].signbit, arr_zwdata[i].length);
             printf("\n");
         }
     }
