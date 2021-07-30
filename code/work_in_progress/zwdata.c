@@ -30,16 +30,33 @@ void add_zwdata(zwdata *a, zwdata *b, zwdata *c);
 
 void print_zwdata(zwdata *n)
 {
-    int i;
-
-    if (n->signbit == MINUS)
+    if (n->signbit == ISSTRING)
     {
-        printf("- ");
+        printf("%s", n->digits);
     }
 
-    for (i = n->length; i >= 0; i--)
+    else
     {
-        printf("%c", '0' + n->digits[i]);
+    int i;
+    if (n->signbit == ISSTRING)
+    {   
+        for (i = n->length; i >= 0; i--)
+        {
+            printf("%c", n->digits[i]);
+        }
+    }
+    else
+    {
+        if (n->signbit == MINUS)
+        {
+            printf("- ");
+        }
+
+        for (i = n->length; i >= 0; i--)
+        {
+            printf("%c", '0' + n->digits[i]);
+        }
+    }
     }
 }
 
@@ -95,8 +112,8 @@ void int_to_zwdata(int s, zwdata *n)
 void string_to_zwdata(char *string, zwdata *n)
 {
     n->signbit = ISSTRING;
-    n->length = strlen(string) + 1; //non conta in \0 finale quindi real legnt++
-    strncmp(n->digits, string, MAXDIGITS); //copy the first MAXDIGITS char so not overflow
+    n->length = strlen(string);
+    strcpy(n->digits, string);
 }
 
 void initialize_zwdata(zwdata *n)
@@ -331,7 +348,6 @@ void divide_zwdata(zwdata *a, zwdata *b, zwdata *c)
 int main(void)
 {
     int a, b;
-    zwdata n1, n2, n3, zero;
     zwdata arr_zwdata[10];
 
     for (int i = 0; i < 10; i++)
@@ -341,6 +357,7 @@ int main(void)
 
     char command;
     int arg1, arg2, arg3;
+    char string[MAXDIGITS];
 
     while (1)
     {
@@ -351,13 +368,6 @@ int main(void)
             break;
         }
 
-        printf("enter arg1\n");
-        scanf("%d", &arg1);
-        printf("enter arg2\n");
-        scanf("%d", &arg2);
-        printf("enter arg3\n");
-        scanf("%d", &arg3);
-
         switch (command)
         {
         case 'i':
@@ -366,6 +376,14 @@ int main(void)
             printf("enter arg2\n");
             scanf("%d", &arg2);
             int_to_zwdata(arg1, &arr_zwdata[arg2]);
+            break;
+
+        case 'I':
+            printf("enter string\n");
+            scanf(" %s", string);
+            printf("enter arg2\n");
+            scanf("%d", &arg2);
+            string_to_zwdata(string, &arr_zwdata[arg2]);
             break;
 
         case 'a':
@@ -421,6 +439,7 @@ int main(void)
         {
             printf("arr_zwdata[%d] = ", i);
             print_zwdata(&arr_zwdata[i]);
+            printf(" len is = %d", arr_zwdata[i].length);
             printf("\n");
         }
     }
