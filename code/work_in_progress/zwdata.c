@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define	MAXDIGITS   100     /* maximum length zwdata */ 
+#define	MAXDIGITS   20     /* maximum length zwdata */ 
 #define PLUS        1       /* positive sign bit */
 #define MINUS       -1      /* negative sign bit */
 
@@ -275,34 +275,63 @@ void divide_zwdata(zwdata *a, zwdata *b, zwdata *c) {
 int main(void) {
     int a,b;
     zwdata n1, n2, n3, zero;
+    zwdata arr_zwdata[10];
+
+    for (int i=0; i<10; i++) {
+        initialize_zwdata(&arr_zwdata[i]);
+    }
     
-    while (scanf("%d %d\n",&a,&b) != EOF) {
-        printf("a = %d    b = %d\n", a, b);
-        int_to_zwdata(a, &n1);
-        int_to_zwdata(b, &n2);
-
-        add_zwdata(&n1, &n2, &n3);
-        printf("addition -- ");
-        print_zwdata(&n3);
-
-        printf("compare_zwdata a ? b = %d\n", compare_zwdata(&n1, &n2));
-
-        subtract_zwdata(&n1, &n2, &n3);
-        printf("subtraction -- ");
-        print_zwdata(&n3);
-
-        multiply_zwdata(&n1, &n2, &n3);
-        printf("multiplication -- ");
-        print_zwdata(&n3);
-
-        int_to_zwdata(0, &zero);
-        if (compare_zwdata(&zero, &n2) == 0) {
-            printf("division -- NaN \n");
-        } else {
-            divide_zwdata(&n1, &n2, &n3);
-            printf("division -- ");
-            print_zwdata(&n3);
+    char command;
+    int arg1, arg2, arg3;
+    
+    while(1) {
+        printf("enter command ");
+        scanf(" %c",&command);
+        if (command == 'Q')
+        {
+            break;
         }
-        printf("--------------------------\n");
+
+        printf("enter arg1\n");
+        scanf("%d",&arg1);
+        printf("enter arg2\n");
+        scanf("%d",&arg2);
+        printf("enter arg3\n");
+        scanf("%d",&arg3);
+
+        switch (command)
+        {
+        case 'i':
+            int_to_zwdata(arg1, &arr_zwdata[arg2]);
+            break;
+
+        case 'a':
+            add_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
+            break;
+        
+        case 's':
+            subtract_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
+            break;
+        
+        case 'm':
+            multiply_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
+            break;
+        
+        case 'd':
+            divide_zwdata(&arr_zwdata[arg1], &arr_zwdata[arg2], &arr_zwdata[arg3]);
+            break;
+        
+        case 'p':
+            print_zwdata(&arr_zwdata[arg1]);
+
+        default:
+            break;
+        }
+
+        for (int i=0; i<10; i++) {
+            printf("arr_zwdata[%d] = ", i);
+            print_zwdata(&arr_zwdata[i]);
+            printf("\n");
+        }
     }
 }
