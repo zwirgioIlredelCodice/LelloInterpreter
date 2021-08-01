@@ -1,5 +1,4 @@
-carica 666 1
-carica 111 2
-somma 1 2
-scrivi 0
+carica 666 2
+carica 111 3
+sottrai 2 3
 fine

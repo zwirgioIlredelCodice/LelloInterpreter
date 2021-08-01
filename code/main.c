@@ -44,22 +44,23 @@ int main(int argc, char *argv[])
 
     error = parse_lelloBLER(argv[1], comandi_array);
 	
+	//debug programma
+	printf("\noutput programma:\n");
+    for (int i = 0; i < numero_comandi; i++)
+    {
+        printf("%d ", comandi_array[i]);
+    }
+	
 	if (error > 0)
 	{
 		printf("ERROR at parse_lellBLER, exit...\n");
 		return 1;
 	}
-	
-	//debug programma
-    for (int i = 0; i < numero_comandi; i++)
-    {
-        printf("%d ", comandi_array[i]);
-    }
-    printf("\noutput programma:\n");
 
     /*
     ---------ESEGUZIONE
     */
+    printf("\noutput esecuzione:\n");
     inizzializza_memoria(50);
     esegui(comandi_array);
 
