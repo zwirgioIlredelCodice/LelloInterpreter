@@ -5,6 +5,9 @@
 
 int main(int argc, char *argv[])
 { //per command line argument
+	
+	int error=0;
+	
     if (argc == 2)
     {
         FILE *fp = fopen(argv[1], "r");
@@ -39,9 +42,15 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    parse_lelloBLER(argv[1], comandi_array);
-
-    //debug programma
+    error = parse_lelloBLER(argv[1], comandi_array);
+	
+	if (error > 0)
+	{
+		printf("ERROR at parse_lellBLER, exit...\n");
+		return 1;
+	}
+	
+	//debug programma
     for (int i = 0; i < numero_comandi; i++)
     {
         printf("%d ", comandi_array[i]);

@@ -33,7 +33,7 @@ int line_number(char nome_file[])
     return count;
 }
 
-void parse_lelloBLER(char nome_file[], int comandi_array[])
+int parse_lelloBLER(char nome_file[], int comandi_array[])
 {
     int p_comandi_array = 0;
 
@@ -93,6 +93,18 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
         else if (strcmp("somma", comando) == 0) 
         {
             n_comando = somma;
+        }
+        else if (strcmp("sottrai", comando) == 0) 
+        {
+            n_comando = sottrai;
+        }
+        else if (strcmp("moltiplica", comando) == 0) 
+        {
+            n_comando = moltiplica;
+        }
+        else if (strcmp("dividi", comando) == 0) 
+        {
+            n_comando = dividi;
         }
         else if (strcmp("e", comando) == 0)
         {
@@ -156,6 +168,7 @@ void parse_lelloBLER(char nome_file[], int comandi_array[])
         }
         else {
             printf("comando non trovato a comando %d\n",p_comandi_array);
+            return 1;
         }
         //lo mette nel array
         comandi_array[p_comandi_array] = n_comando;

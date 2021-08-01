@@ -1,6 +1,7 @@
-#include<stdio.h>
-#include"comandi.h"
-#include"vm.h"
+#include <stdio.h>
+#include "comandi.h"
+#include "vm.h"
+#include "zwdata.h"
 
 
 /*
