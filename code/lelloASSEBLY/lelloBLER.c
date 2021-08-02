@@ -87,7 +87,7 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
         }
         n_arg_1 = atoi(arg_1);
         n_arg_2 = atoi(arg_2);
-		n_arg_2 = atoi(arg_3);
+		n_arg_3 = atoi(arg_3);
 
         if (strcmp("carica", comando) == 0) //se il comando è s_carica
         {
@@ -177,6 +177,7 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
             printf("comando non trovato a comando %d\n",p_comandi_array);
             return 1;
         }
+		
         //lo mette nel array
         comandi_array[p_comandi_array] = n_comando;
         p_comandi_array++;

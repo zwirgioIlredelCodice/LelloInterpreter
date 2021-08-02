@@ -1,4 +1,4 @@
-carica 666 2
-carica 111 3
-sottrai 2 3 0
-fine
+carica 666 2 1
+carica 111 3 1
+sottrai 2 3 1
+fine 0 0 0
