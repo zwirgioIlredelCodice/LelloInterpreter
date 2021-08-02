@@ -43,10 +43,12 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
     char comando[20];
     char arg_1[20];
     char arg_2[20];
+	char arg_3[20];
 
     int n_comando;
     int n_arg_1;
     int n_arg_2;
+	int n_arg_3;
 
     char *token;
     const char delim[2] = " ";
@@ -76,11 +78,16 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
             {
                 strcpy(arg_2, token);
             }
+			if (i == 3)
+			{
+				strcpy(arg_3, token);
+			}
             i++;
             token = strtok(NULL, delim);
         }
         n_arg_1 = atoi(arg_1);
         n_arg_2 = atoi(arg_2);
+		n_arg_2 = atoi(arg_3);
 
         if (strcmp("carica", comando) == 0) //se il comando è s_carica
         {
@@ -176,6 +183,8 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
         comandi_array[p_comandi_array] = n_arg_1;
         p_comandi_array++;
         comandi_array[p_comandi_array] = n_arg_2;
+        p_comandi_array++;
+		comandi_array[p_comandi_array] = n_arg_3;
         p_comandi_array++;
     }
     fclose(fp);

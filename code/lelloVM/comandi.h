@@ -32,42 +32,42 @@ enum comandi
 
 void comando_successivo();
 
-void ALLOCA(int indirizzo1, int indirizzo2);
+void ALLOCA(int address1, int address2);
 
-void CARICA(int costante, int indirizzo1);
+void CARICA(int data, int address1);
 
-void SOMMA(int indirizzo1, int indirizzo2);
+void SOMMA(int address1, int address2, int dest);
 
-void SOTTRAI(int indirizzo1, int indirizzo2);
+void SOTTRAI(int address1, int address2, int dest);
 
-void MOLTIPLICA(int indirizzo1, int indirizzo2);
+void MOLTIPLICA(int address1, int address2, int dest);
 
-void DIVIDI(int indirizzo1, int indirizzo2);
+void DIVIDI(int address1, int address2, int dest);
 
-void E(int indirizzo1, int indirizzo2);
+void E(int address1, int address2, int dest);
 
-void O(int indirizzo1, int indirizzo2);
+void O(int address1, int address2, int dest);
 
-void UGUALE(int indirizzo1, int indirizzo2);
+void UGUALE(int address1, int address2, int dest);
 
-void NONUGUALE(int indirizzo1, int indirizzo2);
+void NONUGUALE(int address1, int address2, int dest);
 
-void MINORE(int indirizzo1, int indirizzo2);
+void MINORE(int address1, int address2, int dest);
 
-void MAGGIORE(int indirizzo1, int indirizzo2);
+void MAGGIORE(int address1, int address2, int dest);
 
-void MINOREUGUALE(int indirizzo1, int indirizzo2);
+void MINOREUGUALE(int address1, int address2, int dest);
 
-void MAGGIOREUGUALE(int indirizzo1, int indirizzo2);
+void MAGGIOREUGUALE(int address1, int address2, int dest);
 
-void NON(int indirizzo1);
+void NON(int address1, int dest);
 
-void VAI(int posizione);
+void VAI(int index);
 
-void VAI_VERO(int posizione);
+void VAI_VERO(int index, int dest);
 
-void VAI_FALSO(int posizione);
+void VAI_FALSO(int index, int dest);
 
-void SCRIVI(int indirizzo1);
+void SCRIVI(int address1);
 
-void IMMETTI(int indirizzo1);
+void IMMETTI(int address1);

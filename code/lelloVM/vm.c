@@ -18,6 +18,7 @@ void esegui(int programma[]) {
 
 		int arg1 = programma[p_contatore+1];
 		int arg2 = programma[p_contatore+2];
+		int arg3 = programma[p_contatore+3];
 
  		switch (programma[p_contatore])
 		{
@@ -30,55 +31,67 @@ void esegui(int programma[]) {
 			break;
 		
 		case somma:
-			SOMMA(arg1, arg2);
+			SOMMA(arg1, arg2, arg3);
 			break;
 		
 		case sottrai:
-			SOTTRAI(arg1, arg2);
+			SOTTRAI(arg1, arg2, arg3);
 			break;
 
 		case moltiplica:
-			MOLTIPLICA(arg1, arg2);
+			MOLTIPLICA(arg1, arg2, arg3);
 			break;
 		
 		case dividi:
-			DIVIDI(arg1, arg2);
+			DIVIDI(arg1, arg2, arg3);
+			break;
+		
+		case e:
+			E(arg1, arg2, arg3);
+			break;
+		
+		case o:
+			O(arg1, arg2, arg3);
 			break;
 		
 		case uguale:
-			UGUALE(arg1, arg2);
+			UGUALE(arg1, arg2, arg3);
 			break;
 
 		case nonuguale:
-			NONUGUALE(arg1, arg2);
+			NONUGUALE(arg1, arg2, arg3);
 			break;
 
 		case minore:
-			MINORE(arg1, arg2);
+			MINORE(arg1, arg2, arg3);
 			break;
 
 		case maggiore:
-			MAGGIORE(arg1, arg2);
+			MAGGIORE(arg1, arg2, arg3);
 			break;
 		
 		case minoreuguale:
-			MINOREUGUALE(arg1, arg2);
+			MINOREUGUALE(arg1, arg2, arg3);
 			break;
 
 		case maggioreuguale:
-			MAGGIOREUGUALE(arg1, arg2);
+			MAGGIOREUGUALE(arg1, arg2, arg3);
 			break;
-
+		
+		case non:
+			NON(arg1, arg2);
+			break;
+		
 		case vai:
 			VAI(arg1);
 			break;
 		
 		case vai_vero:
-			VAI_VERO(arg1);
+			VAI_VERO(arg1, arg2);
 			break;
 
 		case vai_falso:
-			VAI_FALSO(arg1);
+			VAI_FALSO(arg1, arg2);
 			break;
 
 		case scrivi:

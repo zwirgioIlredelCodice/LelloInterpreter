@@ -1,4 +1,4 @@
 carica 666 2
 carica 111 3
-sottrai 2 3
+sottrai 2 3 0
 fine

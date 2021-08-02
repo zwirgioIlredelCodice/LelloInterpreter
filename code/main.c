@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     printf("eseguzione file %s\n", argv[1]);
 
     int numero_righe = line_number(argv[1]) + 1;
-    int numero_comandi = numero_righe * 3;
+    int numero_comandi = numero_righe * 4;
 
     int *comandi_array;
     comandi_array = calloc(numero_comandi, sizeof(int)); //crea un array di int per tnenere tutti i comandi
