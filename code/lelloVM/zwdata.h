@@ -16,6 +16,7 @@ void print_zwdata(zwdata *n);
 void int_to_zwdata(int s, zwdata *n);
 void initialize_zwdata(zwdata *n);
 int max(int a, int b);
+void copy_zwdata(zwdata *a, zwdata *b);
 void add_zwdata(zwdata *a, zwdata *b, zwdata *c);
 void subtract_zwdata(zwdata *a, zwdata *b, zwdata *c);
 int compare_zwdata(zwdata *a, zwdata *b);

@@ -105,6 +105,15 @@ int max(int a, int b)
     return (b);
 }
 
+void copy_zwdata(zwdata *a, zwdata *b)
+{
+    int_to_zwdata(0, b);
+    for (int i = a->length; i >= 0; i--)
+    {
+        b->digits[i] = a->digits[i];   
+    }
+}
+
 int compare_zwdata(zwdata *a, zwdata *b)
 {
     int i; /* counter */

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "comandi.h"
+#include "comandiNEW.h"
 #include "vm.h"
 #include "zwdata.h"
 
@@ -8,112 +8,112 @@
 ---------PROGRAMMA
 */
 void comando_successivo() {
-	p_contatore += 3;
+	p_contatore += 4;
 }
 
 /*
 ---------MEMORIA
 */
-void ALLOCA(int indirizzo1, int indirizzo2) {
-	mem[indirizzo2] = mem[indirizzo1];
+void ALLOCA(int address1, int address2) {
+	copy_zwdata(&mem[address1], &mem[address2]); //copy zwdata address1 in zwdata address2
 	comando_successivo();
 }
 
-void CARICA(int costante, int indirizzo1) {
-	int_to_zwdata(costante, &mem[indirizzo1];
+void CARICA(int data, int address1) {
+	int_to_zwdata(data, &mem[address1]); //now int only
 	comando_successivo();
 }
 
 /*
 ---------OPERAZIONI
 */
-void SOMMA(int indirizzo1, int indirizzo2) {
-	add_zwdata(zwdata *a, zwdata *b, zwdata *c)
+void SOMMA(int address1, int address2, int dest) {
+	add_zwdata(&mem[address1], &mem[address2], &mem[dest]); //add zwdata add1, add2 in dest
 	comando_successivo();
 }
 
-void SOTTRAI(int indirizzo1, int indirizzo2) {
-	mem[0] = mem[indirizzo1] - mem[indirizzo2];
+void SOTTRAI(int address1, int address2, int dest) {
+	subtract_zwdata(&mem[address1], &mem[address2], &mem[dest]); //subtract zwdata add1, add2 in dest
 	comando_successivo();
 }
 
-void MOLTIPLICA(int indirizzo1, int indirizzo2) {
-	mem[0] = mem[indirizzo1] * mem[indirizzo2];
+void MOLTIPLICA(int address1, int address2, int dest) {
+	multiply_zwdata(&mem[address1], &mem[address2], &mem[dest]); //multiply zwdata add1, add2 in dest
 	comando_successivo();
 }
 
-void DIVIDI(int indirizzo1, int indirizzo2) {
-	mem[0] = mem[indirizzo1] / mem[indirizzo2];
+void DIVIDI(int address1, int address2, int dest) {
+	divide_zwdata(&mem[address1], &mem[address2], &mem[dest]); //divide zwdata add1, add2 in dest
 	comando_successivo();
 }
 
 /*
 ---------OPERATORI LOGICI
 */
-void E(int indirizzo1, int indirizzo2) {
-	mem[0] = mem[indirizzo1] && mem[indirizzo2];
+void E(int address1, int address2, int dest) {
+	mem[dest] = mem[address1] && mem[address2];
 	comando_successivo();
 }
 
-void O(int indirizzo1, int indirizzo2) {
-	mem[0] = mem[indirizzo1] || mem[indirizzo2];
+void O(int address1, int address2, int dest) {
+	mem[dest] = mem[address1] || mem[address2];
 	comando_successivo();
 }
 
-void NON(int indirizzo1) {
-	mem[0] = !(mem[indirizzo1]);
+void NON(int address1, int dest) {
+	mem[dest] = !(mem[address1]);
 	comando_successivo();
 }
 
-void UGUALE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] == mem[indirizzo2]);
+void UGUALE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] == mem[address2]);
 	comando_successivo();
 }
 
-void NONUGUALE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] != mem[indirizzo2]);
+void NONUGUALE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] != mem[address2]);
 	comando_successivo();
 }
 
-void MINORE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] < mem[indirizzo2]);
+void MINORE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] < mem[address2]);
 	comando_successivo();
 }
 
-void MAGGIORE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] > mem[indirizzo2]);
+void MAGGIORE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] > mem[address2]);
 	comando_successivo();
 }
 
-void MINOREUGUALE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] <= mem[indirizzo2]);
+void MINOREUGUALE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] <= mem[address2]);
 	comando_successivo();
 }
 
-void MAGGIOREUGUALE(int indirizzo1, int indirizzo2) {
-	mem[0] = (mem[indirizzo1] >= mem[indirizzo2]);
+void MAGGIOREUGUALE(int address1, int address2, int dest) {
+	mem[dest] = (mem[address1] >= mem[address2]);
 	comando_successivo();
 }
 
 /*
 ---------FLUSSO PROGRAMMA
 */
-void VAI(int posizione) {
-	p_contatore = posizione * 3 - 3; //perchè ogni 3
+void VAI(int index) {
+	p_contatore = index * 4 - 4; //perchè ogni 4
 }
 
-void VAI_VERO(int posizione) {
-	if (mem[0] == 1) {
-		p_contatore = posizione * 3 - 3; //perchè ogni 3
+void VAI_VERO(int index, int dest) {
+	if (mem[dest] == 1) {
+		p_contatore = index * 4 - 4; //perchè ogni 4
 	}
 	else {
 		comando_successivo();
 	}
 }
 
-void VAI_FALSO(int posizione) {
-	if (mem[0] == 0) {
-		p_contatore = posizione * 3 - 3; //perchè ogni 3
+void VAI_FALSO(int index, int dest) {
+	if (mem[dest] == 0) {
+		p_contatore = index * 4 - 4; //perchè ogni 4
 	}
 	else {
 		comando_successivo();
@@ -123,12 +123,14 @@ void VAI_FALSO(int posizione) {
 /*
 ---------IO
 */
-void SCRIVI(int indirizzo1) {
-	printf("%d",mem[indirizzo1]);
+void SCRIVI(int address1) {
+	print_zwdata(&mem[address1]);
 	comando_successivo();
 }
 
-void IMMETTI(int indirizzo1) {
-	scanf("%d",&indirizzo1);
+void IMMETTI(int address1) { //only int for now
+	int data;
+	scanf("%d",&data);
+	int_to_zwdata(data, &mem[address1]);
 	comando_successivo();
 }
