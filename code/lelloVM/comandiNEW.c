@@ -14,7 +14,7 @@ void comando_successivo() {
 /*
 ---------MEMORIA
 */
-void ALLOCA(int address1, int address2) {
+void COPY(int address1, int address2) {
 	copy_zwdata(&mem[address1], &mem[address2]); //copy zwdata address1 in zwdata address2
 	comando_successivo();
 }
@@ -51,47 +51,56 @@ void DIVIDI(int address1, int address2, int dest) {
 ---------OPERATORI LOGICI
 */
 void E(int address1, int address2, int dest) {
-	mem[dest] = mem[address1] && mem[address2];
+	int i = and_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void O(int address1, int address2, int dest) {
-	mem[dest] = mem[address1] || mem[address2];
+	int i = and_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void NON(int address1, int dest) {
-	mem[dest] = !(mem[address1]);
+	int i = not_zwdata(&mem[address1]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void UGUALE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] == mem[address2]);
+	int i = equal_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void NONUGUALE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] != mem[address2]);
+	int i = notequal_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void MINORE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] < mem[address2]);
+	int i = less_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void MAGGIORE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] > mem[address2]);
+	int i = great_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void MINOREUGUALE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] <= mem[address2]);
+	int i = lessequal_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 
 void MAGGIOREUGUALE(int address1, int address2, int dest) {
-	mem[dest] = (mem[address1] >= mem[address2]);
+	int i = greatequal_zwdata(&mem[address1], &mem[address2]);
+	int_to_zwdata(i, &mem[dest]);
 	comando_successivo();
 }
 

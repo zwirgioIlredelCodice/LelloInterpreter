@@ -108,10 +108,95 @@ int max(int a, int b)
 void copy_zwdata(zwdata *a, zwdata *b)
 {
     int_to_zwdata(0, b);
+    
+    b->signbit = a->signbit;
+    b->length = a->length;
+    
     for (int i = a->length; i >= 0; i--)
     {
         b->digits[i] = a->digits[i];   
     }
+}
+
+int and_zwdata(zwdata *a, zwdata *b)
+{
+    return (a->digits[0] && b->digits[0]); 
+}
+
+int or_zwdata(zwdata *a, zwdata *b)
+{
+    return (a->digits[0] || b->digits[0]); 
+}
+
+int not_zwdata(zwdata *a)
+{
+    return (!a->digits[0]);    
+}
+
+int equal_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if (i == 0)
+        return 1;   
+    else
+        return 0;
+}
+
+int notequal_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if (i == 0)
+        return 0;   
+    else
+        return 1;
+}
+
+int great_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if (i == 1)
+        return 1;   
+    else
+        return 0;
+}
+
+int less_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if (i == -1)
+        return 1;   
+    else
+        return 0;
+}
+
+int greatequal_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if ((i == 1) || (i == 0))
+        return 1;   
+    else
+        return 0;
+}
+
+int lessequal_zwdata(zwdata *a, zwdata *b)
+{
+    int i;
+    i = compare_zwdata(a, b);
+    
+    if ((i == -1) || (i == 0))
+        return 1;   
+    else
+        return 0;
 }
 
 int compare_zwdata(zwdata *a, zwdata *b)
@@ -427,7 +512,7 @@ int main(void)
         {
             printf("arr_zwdata[%d] = ", i);
             print_zwdata(&arr_zwdata[i]);
-            printf("\tsingbit = %d \tlen is = %d", arr_zwdata[i].signbit, arr_zwdata[i].length);
+            printf("\tsignbit = %d \tlen is = %d", arr_zwdata[i].signbit, arr_zwdata[i].length);
             printf("\n");
         }
     }

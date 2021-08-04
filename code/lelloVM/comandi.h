@@ -2,7 +2,7 @@
 
 enum comandi
 {
-	allocax, //alloca indirizzo in indirizzo x perchè senò rompe 0
+	copy, //alloca indirizzo in indirizzo x perchè senò rompe 0
 	carica, //carica costante in indirizzo 1
 
 	somma, //somma mem[indirizzo] mem[indirizzo] in mem[0] 2
@@ -13,6 +13,7 @@ enum comandi
 	e, // mem[0] mem[indirizzo] && mem[indirizzo]
 	o, // mem[0] mem[indirizzo] || mem[indirizzo]
 	non, // mem[0] = !mem[indirizzo]
+	compare, // 0 if is equal -1 if a<b 1 if a>b
 	uguale,
 	nonuguale,
 	minore,
@@ -32,7 +33,7 @@ enum comandi
 
 void comando_successivo();
 
-void ALLOCA(int address1, int address2);
+void COPY(int address1, int address2);
 
 void CARICA(int data, int address1);
 
@@ -48,6 +49,8 @@ void E(int address1, int address2, int dest);
 
 void O(int address1, int address2, int dest);
 
+void NON(int address1, int dest);
+
 void UGUALE(int address1, int address2, int dest);
 
 void NONUGUALE(int address1, int address2, int dest);
@@ -59,8 +62,6 @@ void MAGGIORE(int address1, int address2, int dest);
 void MINOREUGUALE(int address1, int address2, int dest);
 
 void MAGGIOREUGUALE(int address1, int address2, int dest);
-
-void NON(int address1, int dest);
 
 void VAI(int index);
 

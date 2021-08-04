@@ -14,7 +14,7 @@ void comando_successivo() {
 /*
 ---------MEMORIA
 */
-void ALLOCA(int address1, int address2) {
+void COPY(int address1, int address2) {
 	mem[address1] = mem[address2];
 	comando_successivo();
 }

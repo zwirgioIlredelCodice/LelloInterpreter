@@ -22,8 +22,8 @@ void esegui(int programma[]) {
 
  		switch (programma[p_contatore])
 		{
-		case allocax:
-			ALLOCA(arg1, arg2);
+		case copy:
+			COPY(arg1, arg2);
 			break;
 		
 		case carica:
@@ -54,6 +54,10 @@ void esegui(int programma[]) {
 			O(arg1, arg2, arg3);
 			break;
 		
+		case non:
+			NON(arg1, arg2);
+			break;
+		
 		case uguale:
 			UGUALE(arg1, arg2, arg3);
 			break;
@@ -76,10 +80,6 @@ void esegui(int programma[]) {
 
 		case maggioreuguale:
 			MAGGIOREUGUALE(arg1, arg2, arg3);
-			break;
-		
-		case non:
-			NON(arg1, arg2);
 			break;
 		
 		case vai:
