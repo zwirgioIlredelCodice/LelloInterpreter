@@ -199,6 +199,11 @@ int lessequal_zwdata(zwdata *a, zwdata *b)
         return 0;
 }
 
+int get_first_zwdata_digit(zwdata *a)
+{
+	return a->digits[0];	
+}
+
 int compare_zwdata(zwdata *a, zwdata *b)
 {
     int i; /* counter */

@@ -1,9 +1,12 @@
 #pragma once
 
+#include <stdio.h>
+
 #define MAXDIGITS 20 /* maximum length zwdata */
 #define PLUS 1       /* positive sign bit */
 #define MINUS -1     /* negative sign bit */
 #define ISSTRING 2   /* istring  sing bit */
+#define ZWDATA_SIZE sizeof(zwdata)
 
 typedef struct
 {
@@ -26,6 +29,7 @@ int great_zwdata(zwdata *a, zwdata *b);
 int less_zwdata(zwdata *a, zwdata *b);
 int greatequal_zwdata(zwdata *a, zwdata *b);
 int lessequal_zwdata(zwdata *a, zwdata *b);
+int get_first_zwdata_digit(zwdata *a);
 void add_zwdata(zwdata *a, zwdata *b, zwdata *c);
 void subtract_zwdata(zwdata *a, zwdata *b, zwdata *c);
 int compare_zwdata(zwdata *a, zwdata *b);

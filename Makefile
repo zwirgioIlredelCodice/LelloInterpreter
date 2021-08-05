@@ -1,5 +1,5 @@
 build/lellointerpreter.exe: build/main.o build/comandi.o build/vm.o build/lelloBLER.o build/zwdata.o
-	gcc build/main.o build/comandi.o build/vm.o build/lelloBLER.o zwdata.o -o build/lellointerpreter.exe
+	gcc -Wall build/main.o build/comandi.o build/vm.o build/lelloBLER.o zwdata.o -o build/lellointerpreter.exe
 
 build/main.o: code/main.c
 	gcc -c code/main.c -o build/main.o

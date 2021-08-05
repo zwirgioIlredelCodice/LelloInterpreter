@@ -63,12 +63,13 @@ int main(int argc, char *argv[])
     printf("\noutput esecuzione:\n");
     inizzializza_memoria(50);
     esegui(comandi_array);
-
+	
     //debug memoria
     printf("\nmemoria\n");
     for (int i = 0; i < grandezza_memoria; i++)
     {
-        printf("%d ", (mem[i]));
+        print_zwdata(&mem[i]);
+		printf("\t");
     }
     
     printf("\n");

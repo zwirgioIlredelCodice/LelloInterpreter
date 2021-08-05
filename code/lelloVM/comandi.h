@@ -13,7 +13,6 @@ enum comandi
 	e, // mem[0] mem[indirizzo] && mem[indirizzo]
 	o, // mem[0] mem[indirizzo] || mem[indirizzo]
 	non, // mem[0] = !mem[indirizzo]
-	compare, // 0 if is equal -1 if a<b 1 if a>b
 	uguale,
 	nonuguale,
 	minore,
@@ -35,6 +34,8 @@ void comando_successivo();
 
 void COPY(int address1, int address2);
 
+void ALLOCA(int address1, int address2);
+
 void CARICA(int data, int address1);
 
 void SOMMA(int address1, int address2, int dest);
@@ -49,8 +50,6 @@ void E(int address1, int address2, int dest);
 
 void O(int address1, int address2, int dest);
 
-void NON(int address1, int dest);
-
 void UGUALE(int address1, int address2, int dest);
 
 void NONUGUALE(int address1, int address2, int dest);
@@ -62,6 +61,8 @@ void MAGGIORE(int address1, int address2, int dest);
 void MINOREUGUALE(int address1, int address2, int dest);
 
 void MAGGIOREUGUALE(int address1, int address2, int dest);
+
+void NON(int address1, int dest);
 
 void VAI(int index);
 

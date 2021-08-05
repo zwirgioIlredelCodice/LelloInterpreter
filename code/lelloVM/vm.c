@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include"vm.h"
 #include "comandi.h"
+#include "zwdata.h"
 
 int p_contatore = 0; //il contatore del programma
 int grandezza_memoria;
-int* mem;
+zwdata* mem;
 
 void inizzializza_memoria(int grandezza) {
 	grandezza_memoria = grandezza;
-	mem = calloc(grandezza_memoria,sizeof(int));
+	mem = calloc(grandezza_memoria,sizeof(ZWDATA_SIZE));
 }
 
 void esegui(int programma[]) {
