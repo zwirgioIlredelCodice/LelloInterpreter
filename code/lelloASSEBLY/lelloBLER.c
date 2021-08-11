@@ -93,9 +93,9 @@ int parse_lelloBLER(char nome_file[], int comandi_array[])
         {
             n_comando = carica;
         }
-        else if (strcmp("alloca", comando) == 0) 
+        else if (strcmp("carica", comando) == 0) 
         {
-            n_comando = allocax;
+            n_comando = carica;
         }
         else if (strcmp("somma", comando) == 0) 
         {

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "comandiNEW.h"
 #include "vm.h"
 #include "zwdata.h"
 

@@ -15,6 +15,8 @@ void inizzializza_memoria(int grandezza) {
 
 void esegui(int programma[]) {
 	
+	p_contatore = 0;
+	
 	while (programma[p_contatore] != fine) {
 
 		int arg1 = programma[p_contatore+1];
@@ -107,6 +109,7 @@ void esegui(int programma[]) {
 
 		default:
 			printf("comando non trovato= %d a %d",programma[p_contatore],p_contatore); //se non è nessuno dei comandi prima
+			exit(-1);
 			break;
 		}
 	}

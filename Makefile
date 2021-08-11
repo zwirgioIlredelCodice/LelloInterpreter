@@ -17,7 +17,7 @@ build/lelloBLER.o: code/lelloASSEBLY/lelloBLER.c code/lelloASSEBLY/lelloBLER.h
 	gcc -c code/lelloASSEBLY/lelloBLER.c -o build/lelloBLER.o
 
 clean:
-	del build\*.o build\lellointerpreter.exe
+	rm build/*.o build/lellointerpreter.exe
 
 test:
 	./build/lellointerpreter.exe example/conta.txt
